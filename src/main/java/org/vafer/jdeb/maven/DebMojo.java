@@ -352,6 +352,9 @@ public class DebMojo extends AbstractMojo {
     @Parameter(defaultValue = "gnu")
     private String tarBigNumberMode;
 
+    @Parameter(defaultValue = "false")
+    private boolean ignoreBrokenLinks;
+
     /**
      * Timestamp for reproducible output archive entries, either formatted as ISO 8601
      * <code>yyyy-MM-dd'T'HH:mm:ssXXX</code> or as an int representing seconds since the epoch (like
@@ -594,6 +597,7 @@ public class DebMojo extends AbstractMojo {
             debMaker.setDigest(digest);
             debMaker.setTarBigNumberMode(tarBigNumberMode);
             debMaker.setTarLongFileMode(tarLongFileMode);
+            debMaker.setIgnoreBrokenLinks(ignoreBrokenLinks);
             Long outputTimestampMs = new OutputTimestampResolver(console).resolveOutputTimestamp(outputTimestamp);
             debMaker.setOutputTimestampMs(outputTimestampMs);
             debMaker.validate();
