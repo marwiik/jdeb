@@ -87,6 +87,7 @@ class DataBuilder {
      * @param output
      * @param checksums
      * @param options Options used to build the data file
+     * @param ignoreBrokenLinks Whether to ignore broken symlinks in data directories
      * @return
      * @throws java.security.NoSuchAlgorithmException
      * @throws java.io.IOException
